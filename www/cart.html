@@ -1,0 +1,316 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/Request.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/genericons/genericons.css">
+    <link rel="stylesheet" href="lib/base.css">
+
+	</head>
+
+	<style>
+
+.title {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    margin: 0 10px;
+    min-width: 30px;
+    color: white;
+    height: 50px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 50px; }
+
+
+		@font-face {
+			font-family: "My sa Font";
+			src: url(fonts/San Francisco UI.pkg) format("truetype");
+		}
+	</style>
+
+	<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header" style="background-color: #681979;">
+          <a class="navbar-brand" style=" padding: 0;" href="../www/home.html"><img style="height:50px;" src="img/barLogo.png">
+	      <a class="pull-right" style="margin:0; padding:0; border:0;" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false"><img style="margin-top:10px; height:30px; margin-left:10px; margin-right:10px;" src="img/setting-web.png"></a>
+          <a class="pull-right" href="../www/cart.html"><img style="height:30px; right: 12.1%; position: absolute; margin-top: 9px" src="img/hcart.png"></a>
+
+		</div>
+    </div>
+
+</nav>
+
+
+		<div class="container-fluid" style="min-height:100% !important; height:auto; margin-top: 50px">
+
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <a style="background-color: #681979; color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white; padding-top: 10px" class="btn col-xs-12" href="../www/home.html">Home</a>
+        <a style="background-color: #681979; color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/profile.html">Profile</a>
+        <a style="background-color: #681979; color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/all_blogs.html">Settings</a>
+	  </div>
+
+
+
+			<div id="content">		
+				<div id="page-content">
+				<h3 style="text-align: center;font-family: My sa Font, Verdana, Tahoma; color: #681979; margin-top: 20px;">Your Cart has</h3>
+
+					<div id="cartbody" >
+						<div  id="cart-row-" class="row" style=" background-color: #c192cc; padding-top: 0; margin: 0;">
+							<div class="col-xs-1">
+								<div class="row">
+									<center>
+									<button onclick="increaseThis('+ i + ')" style="color:#681979;border:none;background-color:transparent; padding: 0; margin: 0; margin-top: 5px"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button></center>
+									<center><p id="quantity-" style="margin-top: 5px">1</p></center>
+									<center><button onclick="reduceThis('+ i + ')" style="color:#681979;border:none;background-color:transparent;padding: 0; margin: 0;"><span  class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button></center>
+								</div>
+							</div>
+							<div class="col-xs-4">
+								<img src="img/bananas.jpg" style="width: 80px; height: 80px; padding-top: 5px; margin-bottom: 5px"> 
+							</div>
+							<div class="col-xs-4" style="margin-left: 10px">
+								<div class="row">
+									<h3 style="font-family: My sa Font, Verdana, Tahoma">Bananas</h3>
+									<h5 style="font-family: My sa Font, Verdana, Tahoma"><b>RS. </b><b id="price-" style="font-family: My sa Font, Verdana, Tahoma">20</b></h5>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<div class="row text-right" style="margin-left: 10px; padding: 0">
+									<button onclick="deleteThis('+i+');" style="color:#681979;border:none;background-color:transparent;"><span class="glyphicon glyphicon-remove" style="top: 30px; right: 0" aria-hidden="true"></span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-xs-8">
+						</div>
+						<div class="col-xs-4">
+							<span style="font-family: My sa Font, Verdana, Tahoma">Total Amount</span>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-xs-8">
+						</div>
+						<div class="col-xs-4">
+							<h4><b id="total" style="font-family: My sa Font, Verdana, Tahoma">20</b><b style="font-family: My sa Font, Verdana, Tahoma"> RS</b></h4>
+						</div>
+					</div>
+					<hr>
+					
+					<div class="row">
+						<div class="col-xs-8">
+						</div>
+						<div class="col-xs-4" style="padding: 0; margin: 0">
+							<a style="border-radius:10px; background-color: #681979; color: white; font-family: My sa Font, Verdana, Tahoma;" class="btn" id="checkOut" href="../www/home.html">Checkout</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<script src="lib/hammer.2.0.4.js"></script>
+		<script src="lib/wptr.1.1.js"></script>
+		<script>
+			var qua = 1;
+			$( document ).ready(function() {
+	   /* Android.initializecart();
+	    var rowcount = Android.getrowcount();
+	    if(rowcount==0)
+	    {
+	        var str = '<h4 class="text-center">Cart is Empty!</h4>';
+	        document.getElementById("checkOut").disabled = true;
+			$("#cartbody").html(str);
+	    }
+	    else
+	    {
+	    document.getElementById("checkOut").disabled = false;
+	    GetEmail();
+	    GetInfo(cartArr);
+	    populateCart(cartArr);
+	    totalPrice();
+	}*/
+});
+	/*
+	var cartArr = new Array();
+
+	function GetInfo(arr)
+	{
+	    Android.initializecart();
+	    var rowcount = Android.getrowcount();
+	    for(var i=0; i< rowcount; i++){
+	        var pid = Android.getproductid();
+		    var pname = Android.getproductname();
+		    var pprice = Android.getproductprice();
+		    var pquantity = Android.getproductquantity();
+			var pstore = Android.getproductstore();
+			var pimage = Android.getproductimage();
+		    arr[i] = [pid, pname , pquantity , pprice, pstore, pimage];
+		    Android.nextobject();
+	    }
+
+	}
+	*/
+	function populateCart(arr){
+		$("#cartbody").html("");
+		for(var i=0; i< arr.length; i++){
+			var html="";
+			html += '<div  id="cart-row-'+i+'" class="row" style=" background-color:#EAE7E7;">';
+			html += '<div class="col-xs-1" style="">';
+			html += '<div class="row">';
+			html += '<center><button onclick="increaseThis('+ i + ')" style="color:black;border:none;background-color:#EAE7E7;"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button></center>';
+			html += '</div>';
+			html += '<div class="row">';
+			html += '<center><p id="quantity-'+i+'">'+arr[i][2]+'</p></center>';
+			html += '</div>';
+			html += '<div class="row">';
+			html += '<center><button onclick="reduceThis('+ i + ')" style="color:black;border:none;background-color:#EAE7E7;"><span  class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button></center>';
+			html += '</div>';
+			html += '</div>';	
+			html += '<div class="col-xs-4" >';
+			html += '<img style="" src="'+arr[i][5]+'" class="img-responsive" alt="Cinque Terre"> ';
+			html += '</div>';
+			html += '<div class="col-xs-5">';
+			html += '<div class="row">';
+			html += '<h5>'+arr[i][4]+'</h5>';
+			html += '<h6>'+arr[i][1]+'</h6>';
+			html += '<h4><b>Rs.</b><b id="price-'+i+'">'+arr[i][2]*arr[i][3]+'</b></h4>';
+			html += '</div>';
+			html += '</div>';
+			html += '<div class="col-xs-2">';
+			html += '<div class="row text-right">';
+			html += '<button onclick="deleteThis('+i+');" style="color:black;border:none;background-color:#EAE7E7;"><span  class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>';
+			html += '</div>';
+			html += '</div>';
+			html += '</div>';
+			$("#cartbody").append(html);
+		}
+	}
+
+
+	function reduceThis(b){
+		if(qua > 1){
+			//cartArr[b][2] = cartArr[b][2] + 1;
+			qua--;
+			$("#quantity-").html(qua);
+			$("#price-").html(qua*20);
+			// Update Value In Local Database too.
+			//Android.UpdateRow(cartArr[b][2],cartArr[b][0]);
+			totalPrice();
+		}
+		totalPrice();
+	}
+
+	function totalPrice(){
+		/*var price = 0;
+		for(var i=0; i< cartArr.length; i++){
+			price += cartArr[i][2]* cartArr[i][3];
+		}*/
+		$("#total").html(qua*20);
+	}
+
+	function increaseThis(b){
+			//cartArr[b][2] = cartArr[b][2] + 1;
+			qua++
+			$("#quantity-").html(qua);
+			$("#price-").html(qua*20);
+			// Update Value In Local Database too.
+			//Android.UpdateRow(cartArr[b][2],cartArr[b][0]);
+			totalPrice();
+		}
+
+		function deleteThis(e){
+		//var tempArr = new Array();
+		//tempArr = cartArr;
+		$("#cart-row-").remove();
+		//cartArr = new Array();
+		//counter = 0;
+		/*for(var i=0; i < tempArr.length; i++){
+			if(i != e){
+				cartArr[counter] = tempArr[i];
+				counter++;
+			}
+		}*/
+		
+		//if(cartArr.length <= 0){
+		    //Android.DeleteRow(tempArr[e][0]);
+		    var str = '<h4 class="text-center">Cart is Empty</h4>';
+		    document.getElementById("checkOut").disabled = true;
+		    $("#cartbody").html(str);
+	//	}else{
+		    //Android.DeleteRow(tempArr[e][0]);
+			//populateCart(cartArr);
+		//}
+		qua = 0;
+		totalPrice();
+		//Delete entry from local database too.
+	}
+
+	function callCheckoutfunc()
+	{
+		Android.createCheckoutActivity();
+	}
+
+	function AccessoriesActivity()
+	{
+		Android.createAccessoriesActivity();
+	}
+
+	function BeautyAndSpaActivity(){
+		Android.createBeautyAndSpaActivity();
+	}
+
+	function CosmeticsActivity(){
+		Android.createCosmeticsActivity();
+	}
+
+	function FashionActivity(){
+		Android.createFashionActivity();
+	}
+
+	function FoodActivity(){
+		Android.createFoodActivity();
+	}
+
+	function KidsActivity()
+	{
+		Android.createKidsActivity();
+	}
+
+	function LifeStyleActivity(){
+		Android.createLifeStyleActivity();
+	}
+
+	function PerfumeActivity(){
+		Android.createPerfumeActivity();
+	}
+
+	function HomeActivity()
+	{
+		Android.createHomeActivity();
+	}
+</script>
+</body>
+</html>

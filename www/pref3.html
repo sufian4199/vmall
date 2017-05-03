@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="lib/ionic/css/ionicons.css" rel="stylesheet">
+    
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/Request.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="lib/genericons/genericons.css">
+    <link rel="stylesheet" href="lib/base.css">
+
+    <script src="js/jquery.js"></script> 
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+<style type="text/css">
+  .item-select2 select {
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 240px 0 16px;
+    width: 100%;
+    border: none;
+    background: #fff;
+    color: #333;
+    text-indent: .01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    direction: rtl;}
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+</style>
+  
+    <style type="text/css">
+      .input-label-edited {
+  padding: 7px 10px 0 0px;
+  width: 35%;
+  color: #444;
+  font-size: 16px;
+}
+
+    </style>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+ <div class="bar bar-header bar-balanced" style="background-color: #681979;">
+  <h1 class="title" style="font-family: My sa Font, Verdana, Tahoma; top: 10%"><b>Dressing Style Preference</b></h1>
+</div>
+<ion-content padding="true" style="background-color: white; no-repeat center;background-size:cover; overflow: scroll;" class="scroll-content ionic-scroll  has-header"><div class="scroll padding" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+
+  <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+  <center><h3 style="margin-left: 10px; color: #343434;">What is your dressing style? Choose at least one</h3></center>
+          <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+      <div>
+      <div class="row" style="margin-left: 0.5%">
+        <div id="menDiv0" onclick="HighDiv(0)" style="width: 50%">
+          <center>
+            <img id="imageid1" width="50" height="100" style="padding-top: 10px; box-shadow: 5px 10px 10px #a777b2;">
+            <h4>Casual</h4>
+          </center>
+        </div>
+        <div id="menDiv1" onclick="HighDiv(1)" style="width: 50%">
+          <center>
+            <img id="imageid2" width="50" height="100" style="padding-top: 10px; box-shadow: 5px 10px 10px #a777b2;">
+            <h4>Formal</h4>
+          </center>
+        </div>
+      </div>
+      <div class="row" style="margin-left: 0.5%">
+        <div id="menDiv2" onclick="HighDiv(2)" style="width: 50%">
+          <center>
+            <img id="imageid3" width="50" height="100" style="padding-top: 10px; box-shadow: 5px 10px 10px #a777b2;">
+            <h4>Freestyle</h4>
+          </center>
+        </div>
+        <div id="menDiv3" onclick="HighDiv(3)" style="width: 50%">
+          <center>
+            <img id="imageid4" width="50" height="100" style="padding-top: 10px; box-shadow: 5px 10px 10px #a777b2;">
+            <h4>Semi Formal</h4>
+          </center>
+        </div>
+      </div>
+        <center>
+        <div id="menDiv4" onclick="HighDiv(4)" style="width: 50%">  
+            <img id="imageid5" width="50" height="100" style="padding-top: 10px; box-shadow: 5px 10px 10px #a777b2;">
+            <h4>Traditional</h4>
+        </div>
+        </center>
+      </div>
+    
+<center>
+  <a id="signupButt" style="font-size:16px;border-radius:20px 20px 20px 20px; width: 50%; font-family: My sa Font, Verdana, Tahoma; background-color: #681979; font-size: 18px" class="button button-dark button-block"  onclick="next()">Next</a>
+</center>
+  </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div>
+
+</ion-content>
+  </body>
+
+
+<script type="text/javascript">
+  $(document).ready
+  (function () 
+  {
+    if(localStorage.getItem("sGender")=="male")
+    {
+      document.getElementById("imageid1").src="img/casual.jpg";
+      document.getElementById("imageid2").src="img/formal.jpg";
+      document.getElementById("imageid3").src="img/freestyle.jpg";
+      document.getElementById("imageid4").src="img/semiformal.jpg";
+      document.getElementById("imageid5").src="img/traditional.jpg";
+    }
+    else
+    {
+      document.getElementById("imageid1").src="img/casualf.jpg";
+      document.getElementById("imageid2").src="img/formalf.jpg";
+      document.getElementById("imageid3").src="img/freestylef.jpg";
+      document.getElementById("imageid4").src="img/semiformalf.jpg";
+      document.getElementById("imageid5").src="img/traditionalf.jpg";
+    }
+  });
+
+var c1 = false;
+var c2 = false;
+var c3 = false;
+var c4 = false;
+var c5 = false;
+
+    function HighDiv(id11)
+    {
+      if (id11 == 0) 
+      {
+        if(c1 == true)
+        {
+          document.getElementById('menDiv0').style.backgroundColor = "white";
+          c1 = false;
+        }
+        else
+         {
+            document.getElementById('menDiv0').style.backgroundColor = "#c192cc";
+            c1 = true;
+         }
+      }
+      else
+        if (id11 == 1) 
+        {
+          if(c2 == true)
+          {
+            document.getElementById('menDiv1').style.backgroundColor = "white";
+            c2 = false;
+          }
+          else
+          {
+            document.getElementById('menDiv1').style.backgroundColor = "#c192cc";
+            c2 = true;
+          }
+        }
+        else
+          if (id11 == 2) 
+          {
+            if(c3 == true)
+            {
+              document.getElementById('menDiv2').style.backgroundColor = "white";
+              c3 = false;
+            }
+            else
+            {
+              document.getElementById('menDiv2').style.backgroundColor = "#c192cc";
+              c3 = true;
+            }
+          }
+          else
+            if (id11 == 3) 
+            {
+              if(c4 == true)
+              {
+                document.getElementById('menDiv3').style.backgroundColor = "white";
+                c4 = false;
+              }
+              else
+              {
+                document.getElementById('menDiv3').style.backgroundColor = "#c192cc";
+                c4 = true;
+              }
+            }
+            else
+              if (id11 == 4) 
+              {
+                if(c5 == true)
+                {
+                  document.getElementById('menDiv4').style.backgroundColor = "white";
+                  c5 = false;
+                }
+                else
+                {
+                  document.getElementById('menDiv4').style.backgroundColor = "#c192cc";
+                  c5 = true;
+                }
+              }
+      }
+  
+   function next()
+    {
+      var value="";
+      if (c1 == 0 && c2 == 0 && c3 == 0 && c4 == 0 && c5 == 0) 
+      {
+        alert("Please select at least one Style");
+        return;
+      }
+
+if(c1!=0)
+{
+  value="Casual";
+}
+if (c2!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Formal";
+  }
+  else
+  {
+    value="Formal";
+  }
+
+}
+ 
+if (c3!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Freestyle";
+  }
+  else
+  {
+    value="Freestyle";
+  }
+
+}  
+
+if (c4!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Semi Formal";
+  }
+  else
+  {
+    value="Semi Formal";
+  }
+
+} 
+if (c5!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Traditional";
+  }
+  else
+  {
+    value="Traditional";
+  }
+
+} 
+var id=localStorage.getItem("userid");
+ $.ajax({
+                    type: "POST",
+                    url: "http://localhost/vendor/servercontroller.php",
+                    data: { REQUEST_TYPE: "ADDPREF", ID:id, TYPE:"Style", VALUE:value},
+                    dataType: 'json',
+                    timeout: 30000,
+                    success: function (data) {
+                        if (data.STATUS == "SUCCESS") {
+
+
+                          window.location.href = '../www/pref4.html';
+   
+                        }
+                        else if (data.STATUS == "FAIL") {
+                            alert('Invalid Transaction');
+                        }
+                        else //ERROR
+                        {
+                            alert('Error');
+                        }
+                    },
+                    error: function (x, t, m) {
+                        if (t === "timeout") {
+                            alert('Timeout');
+                        } else {
+                            alert(t);
+                        }
+                    }
+                });   
+
+    }
+
+
+</script>
+
+
+
+</html>

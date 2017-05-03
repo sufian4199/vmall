@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title></title>
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="lib/ionic/css/ionicons.css" rel="stylesheet">
+    
+
+<style type="text/css">
+  .item-select2 select {
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 240px 0 16px;
+    width: 100%;
+    border: none;
+    background: #fff;
+    color: #333;
+    text-indent: .01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    direction: rtl;}
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+</style>
+    <script src="js/jquery.js"></script> 
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    
+    <style type="text/css">
+      .input-label-edited {
+  padding: 7px 10px 0 0px;
+  width: 35%;
+  color: #444;
+  font-size: 16px;
+}
+
+table.table thead tr th {
+  font-family: My sa Font, Verdana, Tahoma;
+}
+table.table tbody tr td {
+  font-family: My sa Font, Verdana, Tahoma;
+}
+
+    </style>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+ <div class="bar bar-header bar-dark" style="background-color: rgb(65,195,52);">
+  <a class="button button-icon icon ion-ios-arrow-back" href="../www/history.html"></a>
+  <h1 class="title" style="left: 10px; position: relative; top: -5px;font-family: My sa Font, Verdana, Tahoma"><b>Order Details</b></h1>
+  <a class="pull-right" href="../www/cart.html"><img style="height:30px; right: 12.1%; position: absolute; margin-top: -1px" src="img/hcart.png"></a>
+ <a class="pull-right" style="margin:0; padding:0; border:0;" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false"><img style="height:30px; right: 0;margin-left:10px; margin-right:10px; position: absolute; vertical-align: center" src="img/setting-web.png"></a>
+
+
+</div>
+<ion-content padding="true" style="background-color: white; no-repeat center;background-size:cover; overflow: scroll;" class="scroll-content ionic-scroll  has-header"><div class="scroll padding" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+    
+<div class="collapse navbar-collapse" id="myNavbar">
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white; padding-top: 10px" class="btn col-xs-12" href="../www/home.html">Home</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/profile.html">Profile</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/all_blogs.html">Blogs</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/history.html">Order History</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/wish.html">Wishlist</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/invite.html">Invite Friends</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/redeem.html">Redeem Points</a></div>
+
+          <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+<div class="container">
+ <a  style="float:right; margin-top:1%; font-family: My sa Font, Verdana, Tahoma; font-size: 16px;background-color: rgb(65,195,52);" type="button" href="../www/cart.html" class="btn btn-success">Reorder</a>
+ 
+<div style="float:left;">
+  <h2 style="font-family: My sa Font, Verdana, Tahoma">Order ID:</h2>
+  <p><b style="font-family: My sa Font, Verdana, Tahoma">12345678</b></p>
+  </div>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Per Price</th>
+      
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Banana</td>
+        <td>12</td>
+        <td>10</td>
+        <td>120</td>
+      </tr>
+
+      <tr>
+        <td>Apple</td>
+        <td>12</td>
+        <td>10</td>
+        <td>120</td>
+      </tr>
+
+      <tr>
+        <td>Mango</td>
+        <td>12</td>
+        <td>10</td>
+        <td>120</td>
+      </tr>
+
+      <tr>
+      <td colspan="3">Net Amount:</td>
+        <td>360</td>
+      </tr>
+      </tbody>
+  </table>
+  <br>
+    <h2> Give Feedback</h2>
+    <div class="form-group">
+  <textarea class="form-control" style="max-width:100%; min-width: 100%; height:20%;  resize: none; background-color: #F0F0F0 " rows="5" id="comment"></textarea>
+  <a style="float:right; margin-top:2%;font-family: My sa Font, Verdana, Tahoma; background-color: rgb(65,195,52); font-size: 16px" type="button" class="btn btn-success" onclick="senttt()">Send</a>
+</div>
+
+</div>
+  </div>
+  <div class="scroll-bar scroll-bar-v">
+  <div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;">
+    
+  </div>
+  </div>
+
+</ion-content>
+
+<script type="text/javascript">
+  function senttt()
+  {
+    alert("Sent to admin");
+    window.location.href = '../www/history.html';
+  }
+</script>
+
+  </body>
+</html>

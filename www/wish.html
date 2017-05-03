@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/Request.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="lib/genericons/genericons.css">
+        <link rel="stylesheet" href="lib/base.css">
+
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+</head>
+<style type="text/css">
+
+input[type=text] {
+    width: 150px;
+    box-sizing: border-box;
+    border: 2px solid rgb(65,195,52);
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('img/sicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 10px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 90%;
+    border-radius: 2px;
+
+}
+
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+@font-face {
+    font-family: "My Custom Font";
+    src: url(fonts/custom.ttf) format("truetype");
+}
+p.customfont { 
+    font-family: "My Custom Font", Verdana, Tahoma;
+}
+</style>
+
+<body   style="min-height:100% !important; height:auto; overflow: scroll;">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header" style="background-color: rgb(65,195,52);">
+            <a class="navbar-brand" style=" padding: 0;" onclick="HomeActivity()"><img style="height:50px;" src="img/newLogo.png">
+	        <a class="pull-right" style="margin:0; padding:0; border:0;" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false"><img style="margin-top:10px; height:30px; margin-left:10px; margin-right:10px;" src="img/setting-web.png"></a>
+           <a class="pull-right" href="../www/cart.html"><img style="height:30px; right: 12.1%; position: absolute; margin-top: 9px" src="img/hcart.png"></a>
+
+		</div>
+    </div>
+</nav>
+<ion-content padding="true" style="background-color: white; no-repeat center;background-size:cover; overflow: scroll;" class="scroll-content ionic-scroll  has-header"><div class="scroll padding" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+
+<div class="container-fluid"  style="min-height:100% !important; height:auto; padding: 0; margin-top: 10px">
+
+
+
+<div class="collapse navbar-collapse" id="myNavbar">
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white; padding-top: 10px" class="btn col-xs-12" href="../www/home.html">Home</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/profile.html">Profile</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/all_blogs.html">Blogs</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/history.html">Order History</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/wish.html">Wishlist</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/invite.html">Invite Friends</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/redeem.html">Redeem Points</a></div>
+
+
+
+
+
+<div id="content">
+<div id="page-content">
+<h2 style="text-align: center;font-family: My sa Font, Verdana, Tahoma; color: rgb(65,195,52);">My Wishlist</h2>
+
+
+<div class="list" style="margin-right: 2%; margin-left: 2%; padding-top: 10px">
+
+  <label class="item" >
+  <div style="height: 50px;" >
+  <div style="float:left;">
+    <img  height="125" src="img/apples.jpg"/>
+    <center><h2 style="font-family: My sa Font, Verdana, Tahoma;font-size:17px">Apples</h2></center>
+  </div>
+  
+  <div style="float:right; padding-top:15px;">
+     <a id="rHeart" style=" background-color: white;  color:red;  font-family: My sa Font, Verdana, Tahoma" class="button button-icon icon ion-ios-heart" onclick="whiteH('rHeart')"></a>
+     <br>
+     <a id="view_bloag" style=" background-color: white;  color:rgb(65,195,52);  font-family: My sa Font, Verdana, Tahoma" class="button button-icon icon ion-android-cart"></a>
+   
+  </div>
+  </div>
+  </label>
+
+ <label class="item" >
+  <div style="height: 50px;" >
+  <div style="float:left;">
+    <img  height="125" src="img/oranges.jpg"/>
+    <center><h2 style="font-family: My sa Font, Verdana, Tahoma;font-size:17px">Oranges</h2></center>
+  </div>
+  
+  <div style="float:right; padding-top:15px;">
+     <a id="rHeart1" style=" background-color: white;  color:red;  font-family: My sa Font, Verdana, Tahoma" class="button button-icon icon ion-ios-heart" onclick="whiteH('rHeart1')"></a>
+     <br>
+     <a id="view_bloag" style=" background-color: white;  color:rgb(65,195,52);  font-family: My sa Font, Verdana, Tahoma" class="button button-icon icon ion-android-cart"></a>
+   
+  </div>
+  </div>
+  </label>
+
+  <label class="item" >
+  <div style="height: 50px;" >
+  <div style="float:left;">
+    <img  height="125" src="img/dates.jpg"/>
+    <center><h2 style="font-family: My sa Font, Verdana, Tahoma;font-size:17px">Dates</h2></center>
+  </div>
+  
+  <div style="float:right; padding-top:15px;">
+     <a id="rHeart2" style=" background-color: white;  color:red;  font-family: My sa Font, Verdana, Tahoma" class="button button-icon icon ion-ios-heart" onclick="whiteH('rHeart2')"></a>
+     <br>
+     <a id="view_bloag" style=" background-color: white;  color:rgb(65,195,52);  font-family: My sa Font, Verdana, Tahoma" class="button button-icon icon ion-android-cart"></a>
+   
+  </div>
+  </div>
+  </label> 
+
+  <label class="item" >
+  <div style="height: 50px;" >
+  <div style="float:left;">
+    <img  height="125" src="img/bananas.jpg"/>
+    <center><h2 style="font-family: My sa Font, Verdana, Tahoma;font-size:17px">Bananas</h2></center>
+  </div>
+  
+  <div style="float:right; padding-top:15px;">
+     <a id="rHeart3" style=" background-color: white;  color:red;  font-family: My sa Font, Verdana, Tahoma" class="button button-icon icon ion-ios-heart" onclick="whiteH('rHeart3')"></a>
+     <br>
+     <a id="view_bloag" style=" background-color: white;  color:rgb(65,195,52);  font-family: My sa Font, Verdana, Tahoma" class="button button-icon icon ion-android-cart"></a>
+   
+  </div>
+  </div>
+  </label>
+  
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</ion-content>
+<script src="lib/hammer.2.0.4.js"></script>
+<script src="lib/wptr.1.1.js"></script>
+
+<script>
+function whiteH(idee)
+{
+  var label2 = document.getElementById(idee);
+  label2.className =  "button button-icon icon ion-ios-heart-outline"
+}
+var snd = new Audio("img/sounds/whistle.mp3"); // buffers automatically when created
+var refresh=false;
+$( document ).ready(function() {
+//	$("#page-content").html('<div class="row text-center"><img style="margin-top:30%; width:60px; height:auto;" src="img/loader.gif"/></div>');
+//    GetEmail();
+//    HomeRequest();
+});
+function collapseIt(e) {
+	if($('#'+e+'-icon').hasClass('glyphicon-menu-down'))
+	{
+		$('#'+e+'-icon').attr('class', 'glyphicon glyphicon-menu-up');
+	}
+	else
+	{
+		$('#'+e+'-icon').attr('class', 'glyphicon glyphicon-menu-down');
+	}
+}
+
+window.onload = function() {
+	WebPullToRefresh.init( {
+		loadingFunction: exampleLoadingFunction
+	} );
+};
+
+// Just an example loading function that returns a
+// promise that WebPullToRefresh can use.
+var exampleLoadingFunction = function() {
+	return new Promise( function( resolve, reject ) {
+		// Run some async loading code here
+		snd.play();
+		HomeRequest();
+		if ( true /* if the loading worked */ ) {
+			resolve();
+		} else {
+			reject();
+		}
+	} );
+};
+
+$('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='"+fieldName+"']");
+    var currentVal = parseInt(input.val());
+    if (!isNaN(currentVal)) {
+        if(type == 'minus') {
+            
+            if(currentVal > input.attr('min')) {
+                input.val(currentVal - 1).change();
+            } 
+            if(parseInt(input.val()) == input.attr('min')) {
+                $(this).attr('disabled', true);
+            }
+
+        } else if(type == 'plus') {
+
+            if(currentVal < input.attr('max')) {
+                input.val(currentVal + 1).change();
+            }
+            if(parseInt(input.val()) == input.attr('max')) {
+                $(this).attr('disabled', true);
+            }
+
+        }
+    } else {
+        input.val(0);
+    }
+});
+$('.input-number').focusin(function(){
+   $(this).data('oldValue', $(this).val());
+});
+$('.input-number').change(function() {
+    
+    minValue =  parseInt($(this).attr('min'));
+    maxValue =  parseInt($(this).attr('max'));
+    valueCurrent = parseInt($(this).val());
+    
+    name = $(this).attr('name');
+    if(valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the minimum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    if(valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the maximum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    
+    
+});
+$(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
+
+
+</script>
+</body>
+</html>

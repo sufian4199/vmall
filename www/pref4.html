@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="lib/ionic/css/ionicons.css" rel="stylesheet">
+    
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/Request.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="lib/genericons/genericons.css">
+    <link rel="stylesheet" href="lib/base.css">
+
+    <script src="js/jquery.js"></script> 
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+<style type="text/css">
+  .item-select2 select {
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 240px 0 16px;
+    width: 100%;
+    border: none;
+    background: #fff;
+    color: #333;
+    text-indent: .01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    direction: rtl;}
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+</style>
+  
+    <style type="text/css">
+      .input-label-edited {
+  padding: 7px 10px 0 0px;
+  width: 35%;
+  color: #444;
+  font-size: 16px;
+}
+
+    </style>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+ <div class="bar bar-header bar-balanced" style="background-color: #681979">
+  <h1 class="title" style="font-family: My sa Font, Verdana, Tahoma; top: 20%"><b>Color Preference</b></h1>
+</div>
+<ion-content padding="true" style="background-color: white; no-repeat center;background-size:cover; overflow: scroll;" class="scroll-content ionic-scroll  has-header"><div class="scroll padding" style="transform: translate3d(0px, 0px, 0px) scale(1); background-color: #f2f2f2">
+
+  <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+  <center><h3 style="margin-left: 10px; color: #343434;">Choose the Colors you prefer to wear</h3></center>
+          <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+      <div class="row">
+        <div id="menDiv0" onclick="HighDiv(0)" style="width: 50%">
+          <center>
+            <img src="img/black.png" width="100" height="100" style="padding-top: 20px;">
+            <h4>Black</h4>
+          </center>
+        </div>
+        <div id="menDiv1" onclick="HighDiv(1)" style="width: 50%">
+          <center>
+            <img src="img/blue.png" width="100" height="100" style="padding-top: 20px;">
+            <h4 style="color: blue">Blue</h4>
+          </center>
+        </div>
+      </div>
+        <div class="row">
+        <div id="menDiv2" onclick="HighDiv(2)" style="width: 50%">
+          <center>
+            <img src="img/green.png" width="100" height="100" style="padding-top: 20px;">
+            <h4 style="color: green">Green</h4>
+          </center>
+        </div>
+        <div id="menDiv3" onclick="HighDiv(3)" style="width: 50%">
+          <center>
+            <img src="img/grey.png" width="100" height="100" style="padding-top: 20px;">
+            <h4 style="color: grey">Grey</h4>
+          </center>
+        </div>
+        </div>
+        <div class="row">
+        <div id="menDiv4" onclick="HighDiv(4)" style="width: 50%">
+          <center>
+            <img src="img/orange.png" width="100" height="100" style="padding-top: 20px;">
+            <h4 style="color: orange">Orange</h4>
+          </center>
+        </div>
+        <div id="menDiv5" onclick="HighDiv(5)" style="width: 50%">
+          <center>
+            <img src="img/pink.png" width="100" height="100" style="padding-top: 20px;">
+            <h4 style="color: #ff69b4">Pink</h4>
+          </center>
+        </div>
+        </div>
+        <div class="row">
+        <div id="menDiv6" onclick="HighDiv(6)" style="width: 50%">
+          <center>
+            <img src="img/purple.png" width="100" height="100" style="padding-top: 20px;">
+            <h4 style="color: purple">Purple</h4>
+          </center>
+        </div>
+        <div id="menDiv7" onclick="HighDiv(7)" style="width: 50%">
+          <center>
+            <img src="img/red.png" width="100" height="100" style="padding-top: 20px;">
+            <h4 style="color: red">Red</h4>
+          </center>
+        </div>
+        </div>
+        <div class="row">
+        <div id="menDiv8" onclick="HighDiv(8)" style="width: 50%">
+          <center>
+            <img src="img/white.png" width="100" height="100" style="padding-top: 20px;">
+            <h4>White</h4>
+          </center>
+        </div>
+        <div id="menDiv9" onclick="HighDiv(9)" style="width: 50%">
+          <center>
+            <img src="img/yellow.png" width="100" height="100" style="padding-top: 20px;">
+            <h4 style="color: #e5e500">Yellow</h4>
+          </center>
+        </div>
+        </div>
+        
+    
+<center>
+  <a id="signupButt" style="font-size:16px;border-radius:20px 20px 20px 20px; width: 50%; font-family: My sa Font, Verdana, Tahoma; background-color: #681979; font-size: 18px" class="button button-dark button-block"  onclick="next()">Next</a>
+</center>
+  </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div>
+
+</ion-content>
+  </body>
+
+
+<script type="text/javascript">
+
+var c1 = false;
+var c2 = false;
+var c3 = false;
+var c4 = false;
+var c5 = false;
+var c6 = false;
+var c7 = false;
+var c8 = false;
+var c9 = false;
+var c10 = false;
+
+    function HighDiv(id11)
+    {
+      if (id11 == 0) 
+      {
+        if(c1 == true)
+        {
+          document.getElementById('menDiv0').style.backgroundColor = "#f2f2f2";
+          c1 = false;
+        }
+        else
+         {
+            document.getElementById('menDiv0').style.backgroundColor = "#c192cc";
+            c1 = true;
+         }
+      }
+      else
+        if (id11 == 1) 
+        {
+          if(c2 == true)
+          {
+            document.getElementById('menDiv1').style.backgroundColor = "#f2f2f2";
+            c2 = false;
+          }
+          else
+          {
+            document.getElementById('menDiv1').style.backgroundColor = "#c192cc";
+            c2 = true;
+          }
+        }
+        else
+          if (id11 == 2) 
+          {
+            if(c3 == true)
+            {
+              document.getElementById('menDiv2').style.backgroundColor = "#f2f2f2";
+              c3 = false;
+            }
+            else
+            {
+              document.getElementById('menDiv2').style.backgroundColor = "#c192cc";
+              c3 = true;
+            }
+          }
+          else
+            if (id11 == 3) 
+            {
+              if(c4 == true)
+              {
+                document.getElementById('menDiv3').style.backgroundColor = "#f2f2f2";
+                c4 = false;
+              }
+              else
+              {
+                document.getElementById('menDiv3').style.backgroundColor = "#c192cc";
+                c4 = true;
+              }
+            }
+            else
+              if (id11 == 4) 
+              {
+                if(c5 == true)
+                {
+                  document.getElementById('menDiv4').style.backgroundColor = "#f2f2f2";
+                  c5 = false;
+                }
+                else
+                {
+                  document.getElementById('menDiv4').style.backgroundColor = "#c192cc";
+                  c5 = true;
+                }
+              }
+            else
+              if (id11 == 5) 
+              {
+                if(c6 == true)
+                {
+                  document.getElementById('menDiv5').style.backgroundColor = "#f2f2f2";
+                  c6 = false;
+                }
+                else
+                {
+                  document.getElementById('menDiv5').style.backgroundColor = "#c192cc";
+                  c6 = true;
+                }
+              }
+            else
+              if (id11 == 6) 
+              {
+                if(c7 == true)
+                {
+                  document.getElementById('menDiv6').style.backgroundColor = "#f2f2f2";
+                  c7 = false;
+                }
+                else
+                {
+                  document.getElementById('menDiv6').style.backgroundColor = "#c192cc";
+                  c7 = true;
+                }
+              }
+            else
+              if (id11 == 7) 
+              {
+                if(c8 == true)
+                {
+                  document.getElementById('menDiv7').style.backgroundColor = "#f2f2f2";
+                  c8 = false;
+                }
+                else
+                {
+                  document.getElementById('menDiv7').style.backgroundColor = "#c192cc";
+                  c8 = true;
+                }
+              }
+            else
+              if (id11 == 8) 
+              {
+                if(c9 == true)
+                {
+                  document.getElementById('menDiv8').style.backgroundColor = "#f2f2f2";
+                  c9 = false;
+                }
+                else
+                {
+                  document.getElementById('menDiv8').style.backgroundColor = "#c192cc";
+                  c9 = true;
+                }
+              }
+               else
+              if (id11 == 9) 
+              {
+                if(c10 == true)
+                {
+                  document.getElementById('menDiv9').style.backgroundColor = "#f2f2f2";
+                  c10 = false;
+                }
+                else
+                {
+                  document.getElementById('menDiv9').style.backgroundColor = "#c192cc";
+                  c10 = true;
+                }
+              }
+
+      }
+  
+   function next()
+    {
+      var value="";
+      if (c1 == 0 && c2 == 0 && c3 == 0 && c4 == 0 && c5 == 0 && c6 == 0 && c7 == 0 && c8 == 0 && c9 == 0 && c10 == 0) 
+      {
+        alert("Please select at least one color");
+        return;
+      }
+      if(c1!=0)
+{
+  value="Black";
+}
+if (c2!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Blue";
+  }
+  else
+  {
+    value="Blue";
+  }
+
+}
+ 
+if (c3!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Green";
+  }
+  else
+  {
+    value="Green";
+  }
+
+}  
+
+if (c4!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Grey";
+  }
+  else
+  {
+    value="Grey";
+  }
+
+} 
+if (c5!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Orange";
+  }
+  else
+  {
+    value="Orange";
+  }
+
+} 
+
+if (c6!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Pink";
+  }
+  else
+  {
+    value="Pink";
+  }
+
+}
+ 
+if (c7!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Purple";
+  }
+  else
+  {
+    value="Purple";
+  }
+
+}  
+
+if (c8!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Red";
+  }
+  else
+  {
+    value="Red";
+  }
+
+} 
+if (c9!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"White";
+  }
+  else
+  {
+    value="White";
+  }
+
+}
+if (c10!=0)
+{ 
+  if(value!="")
+  {
+    value=value+","+"Yellow";
+  }
+  else
+  {
+    value="Yellow";
+  }
+
+}  
+var id=localStorage.getItem("userid");
+ $.ajax({
+                    type: "POST",
+                    url: "http://localhost/vendor/servercontroller.php",
+                    data: { REQUEST_TYPE: "ADDPREF", ID:id, TYPE:"Color", VALUE:value},
+                    dataType: 'json',
+                    timeout: 30000,
+                    success: function (data) {
+                        if (data.STATUS == "SUCCESS") {
+
+
+                        window.location.href = '../www/pref5.html';
+                        }
+                        else if (data.STATUS == "FAIL") {
+                            alert('Invalid Transaction');
+                        }
+                        else //ERROR
+                        {
+                            alert('Error');
+                        }
+                    },
+                    error: function (x, t, m) {
+                        if (t === "timeout") {
+                            alert('Timeout');
+                        } else {
+                            alert(t);
+                        }
+                    }
+                });   
+
+    //  else
+      // window.location.href = '../www/pref5.html';
+    }
+
+
+</script>
+
+
+
+</html>

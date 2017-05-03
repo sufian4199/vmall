@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+<script src="js/jquery.js"></script>    
+    
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="lib/ionic/css/ionicons.css" rel="stylesheet">
+    
+<style type="text/css">
+  #signupButt:hover{
+  background-color: #89BD53;
+    color: #FFFFFF;
+}
+
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+
+</style>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+ <div class="bar bar-header bar-balanced" style="background-color: #681979">
+  <a class="button button-icon icon ion-ios-arrow-back" href="../www/index.html"></a>
+  <h1 class="title" style="font-family: My sa Font, Verdana, Tahoma; top: 10%"><b>Sign Up</b></h1>
+</div>
+
+<ion-content style="background-color: #ffffff; no-repeat center;background-size:cover;overflow: scroll;" class="scroll-content ionic-scroll  has-header"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+    <div class="spacer" style="width: 300px; height: 35px;"></div>
+    <center>
+    <div class="list list-inset" style="width: 95%">
+      <label class="item item-input">
+        <input id="name" type="text" placeholder="FULL NAME" style="font-family: My sa Font, Verdana, Tahoma;">
+      </label>
+    <div class="spacer" style="width: 300px; height: 10px;"></div>
+      <label class="item item-input">
+        <input id="email" type="email" placeholder="EMAIL" style="font-family: My sa Font, Verdana, Tahoma;">
+      </label>
+    <div class="spacer" style="width: 300px; height: 10px;"></div>
+      <label class="item item-input">
+        <input id="phone" type="number" placeholder="PHONE NUMBER +923212345678" style="font-family: My sa Font, Verdana, Tahoma;">
+      </label>
+    <div class="spacer" style="width: 300px; height: 10px;"></div>
+      <label class="item item-input">
+        <input id="password" type="password" placeholder="PASSWORD" style="font-family: My sa Font, Verdana, Tahoma;">
+      </label>
+    <div class="spacer" style="width: 300px; height: 10px;"></div>
+      <label class="item item-input">
+        <input id="address" type="text" placeholder="ADDRESS" style="font-family: My sa Font, Verdana, Tahoma;">
+      </label>
+    <div class="spacer" style="width: 300px; height: 10px;"></div>
+      <label class="item item-input item-select"  style="height: 44px;border-width: 2px">
+        <select id="gender" style="font-family: My sa Font, Verdana, Tahoma; font-size: 16px">
+         <option value="0">GENDER</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        </select>
+      </label>    
+      </div>
+
+      <a onclick="signup()" id="welcome-button14" style="font-size:19px;border-radius:5px 5px 5px 5px; width: 80%; font-family: My sa Font, Verdana, Tahoma; background-color: #681979;" class="button button-balanced button-block"><b>Register Now!</b></a>
+    
+    </center>
+
+  </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div>
+
+</ion-content>
+
+<script type="text/javascript">
+  
+  function signup()
+  {
+
+         var name= document.getElementById('name').value;
+         var email= document.getElementById('email').value;
+         var password= document.getElementById('password').value;
+         var phone= document.getElementById('phone').value;
+         var address= document.getElementById('address').value;
+         var gender= document.getElementById('gender').value;
+     if(email==""||password==""||name==""||phone==""||address==""||gender=="0")
+      {
+      alert('Please fill all credential');
+      return;
+      }
+
+          $.ajax({
+                    type: "POST",
+                    url: "http://localhost/vendor/servercontroller.php",
+                    data: { REQUEST_TYPE: "SIGNUP", NAME:name, EMAIL:email, PASSWORD:password, PHONE:phone, GENDER:gender, ADDRESS:address, TYPE:0},
+                    dataType: 'json',
+                    timeout: 30000,
+                    success: function (data) {
+                        if (data.STATUS == "SUCCESS") {
+    //                       alert("success");
+                     getuserid(email,password);
+                        }
+                        else if (data.STATUS == "FAIL") {
+                            alert('Invalid Transaction');
+                        }
+                        else //ERROR
+                        {
+                            alert('Error');
+                        }
+                    },
+                    error: function (x, t, m) {
+                        if (t === "timeout") {
+                            alert('Timeout');
+                        } else {
+                            alert(t);
+                        }
+                    }
+                });   
+       
+            
+      
+    
+ }
+  function getuserid(email,password)
+  {
+        
+
+          $.ajax({
+                    type: "POST",
+                    url: "http://localhost/vendor/servercontroller.php",
+                    data: { REQUEST_TYPE: "LOGIN", EMAIL:email, PASSWORD:password,TYPE:0},
+                    dataType: 'json',
+                    timeout: 30000,
+                    success: function (data) {
+                        if (data.STATUS == "SUCCESS") {
+    //                       alert("success");
+                         localStorage.setItem("userid",data.id);
+                         
+                         localStorage.setItem("sGender",data.gender);
+                           window.location.href = '../www/pref2.html';
+                        }
+                        else if (data.STATUS == "FAIL") {
+                            alert('Invalid Transaction');
+                        }
+                        else //ERROR
+                        {
+                            alert('Error');
+                        }
+                    },
+                    error: function (x, t, m) {
+                        if (t === "timeout") {
+                            alert('Timeout');
+                        } else {
+                            alert(t);
+                        }
+                    }
+                });   
+       
+            
+      
+    
+ }
+</script>
+  </body>
+</html>

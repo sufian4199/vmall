@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="lib/ionic/css/ionicons.css" rel="stylesheet">
+    
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/Request.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="lib/genericons/genericons.css">
+    <link rel="stylesheet" href="lib/base.css">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<style type="text/css">
+  .item-select2 select {
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 240px 0 16px;
+    width: 100%;
+    border: none;
+    background: #fff;
+    color: #333;
+    text-indent: .01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    direction: rtl;}
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+p.customfont { 
+    font-family: "My sa Font", Verdana, Tahoma;
+}
+</style>
+   
+    <style type="text/css">
+      .input-label-edited {
+  padding: 7px 10px 0 0px;
+  width: 35%;
+  color: #444;
+  font-size: 16px;
+}
+    </style>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+ <div class="bar bar-header bar-dark" style="background-color: rgb(65,195,52);">
+  <a class="button button-icon icon ion-ios-arrow-back" href="../www/home.html"></a>
+  <h1 class="title" style="left: 10px; position: relative; top: -5px;font-family: My sa Font, Verdana, Tahoma"><b>Blogs</b></h1>
+  
+ <a class="pull-right" href="../www/cart.html"><img style="height:30px; right: 12.1%; position: absolute; margin-top: -1px" src="img/hcart.png"></a>
+ <a class="pull-right" style="margin:0; padding:0; border:0;" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false"><img style="height:30px; right: 0;margin-left:10px; margin-right:10px; position: absolute; vertical-align: center" src="img/setting-web.png"></a>
+
+</div>
+<ion-content padding="true" style="background-color: white; no-repeat center;background-size:cover; overflow: scroll;" class="scroll-content ionic-scroll  has-header"><div class="scroll padding" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+    
+
+
+<div class="collapse navbar-collapse" id="myNavbar">
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white; padding-top: 10px" class="btn col-xs-12" href="../www/home.html">Home</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/profile.html">Profile</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/all_blogs.html">Blogs</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/history.html">Order History</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/wish.html">Wishlist</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/invite.html">Invite Friends</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/redeem.html">Redeem Points</a></div>
+
+
+
+
+          <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+  <center>
+
+      <a id="uploadPic" style="border-radius:10px 10px 10px 10px; width: 50%; background-color: rgb(65,195,52);font-family: My sa Font, Verdana, Tahoma; font-size: 18px" class="button button-dark button-block"  href="../www/create_blog.html"><b>Create Blog</b></a>
+    <br>
+
+  </center>
+  <div class="list" style="margin-left: 2%; margin-right: 2%; padding-top: 10px">
+  <label class="item" >
+  <div style="height: 50px;" >
+  <div style="float:left;">
+  <p style="font-size: 17px;font-family: My sa Font, Verdana, Tahoma"><b>Username</b></p>
+  <p style="font-family: My sa Font, Verdana, Tahoma">Topic of Blog</p>
+  <p style="font-family: My sa Font, Verdana, Tahoma">This Blog is about</p>
+  </div>
+  
+  <div style="float:right; padding-top:15px;">
+     <a id="view_bloag" href="../www/blogdetails.html" style=" background-color: white;  color:rgb(65,195,52);  font-family: My sa Font, Verdana, Tahoma" class="button button-icon icon ion-chevron-right"></a>
+   
+  </div>
+  </div>
+  </label>
+  <label class="item" >
+  <div style="height: 50px;" >
+  <div style="float:left;">
+  <p style="font-size: 17px;font-family: My sa Font, Verdana, Tahoma"><b>Username</b></p>
+  <p style="font-family: My sa Font, Verdana, Tahoma">Topic of Blog</p>
+  <p style="font-family: My sa Font, Verdana, Tahoma">This Blog is about</p>
+  </div>
+  
+  <div style="float:right; padding-top:15px;">
+     <a id="view_bloag" href="../www/blogdetails.html" style=" background-color: white;  color:rgb(65,195,52);  font-family: My sa Font, Verdana, Tahoma" class="button button-icon icon ion-chevron-right"></a>
+   
+  </div>
+  </div>
+  </label>
+  
+  </div>
+  </div>
+  <div class="scroll-bar scroll-bar-v">
+  <div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;">
+    
+  </div></div>
+
+</ion-content>
+
+
+  </body>
+</html>

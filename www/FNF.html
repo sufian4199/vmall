@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="lib/ionic/css/ionicons.css" rel="stylesheet">
+    
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/Request.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="lib/genericons/genericons.css">
+    <link rel="stylesheet" href="lib/base.css">
+
+    <script src="js/jquery.js"></script> 
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<style type="text/css">
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+
+ input:focus 
+ { border-bottom: 1px solid green; }
+
+</style>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+ <div class="bar bar-header bar-dark" style="background-color: rgb(65,195,52);">
+  <a class="button button-icon icon ion-ios-arrow-back" href="../www/profile.html"></a>
+  <h1 class="title" style="left: 10px; position: relative; top: -5px;font-family: My sa Font, Verdana, Tahoma"><b>FNF</b></h1>
+  
+ <a class="pull-right" href="../www/cart.html"><img style="height:30px; right: 12.1%; position: absolute; margin-top: -1px" src="img/hcart.png"></a>
+ <a class="pull-right" style="margin:0; padding:0; border:0;" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false"><img style="height:30px; right: 0;margin-left:10px; margin-right:10px; position: absolute; vertical-align: center" src="img/setting-web.png"></a>
+
+
+</div>
+<ion-content style="background-color: #ffffff; no-repeat center;background-size:cover; overflow: scroll;" class="scroll-content ionic-scroll  has-header"><div class="scroll padding" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+        <div class="collapse navbar-collapse" id="myNavbar">
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white; padding-top: 10px" class="btn col-xs-12" href="../www/home.html">Home</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/profile.html">Profile</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/all_blogs.html">Blogs</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/history.html">Order History</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/wish.html">Wishlist</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/invite.html">Invite Friends</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/redeem.html">Redeem Points</a></div>
+
+
+    <h3 style="text-align: center;font-family: My sa Font, Verdana, Tahoma;margin-top: 20px;">My Friends & Family</h3>
+  <div class="spacer" style="width: 300px; height: 10px;"></div>
+  <center>
+      <img src="img/avatar1.png" style="display: block; width: 25%; margin-left: auto; margin-right: auto;">
+   </center>
+<div style="margin-right: 2%; margin-left: 2%; padding-top: 10px;">
+
+<label class="item" onclick="fnfDetails()">
+  <div class="row" style="height: 40px; padding: 0; margin: 0">
+    <div style="margin-left: 2%;width: 10%;">
+      <a style="float: left;" class="button button-icon icon ion-person"></a>
+    </div>
+    <div style="margin-left: 10%; padding-top: 0.5%">
+      <span class="input-label" style="font-family: My sa Font, Verdana, Tahoma;">Member Name</span>
+    </div>
+  </div>
+  </label>  
+
+<label class="item" onclick="fnfDetails()">
+  <div class="row" style="height: 40px;padding: 0; margin: 0">
+    <div style="margin-left: 2%;width: 10%;">
+      <a style="float: left;" class="button button-icon icon ion-person"></a>
+    </div>
+    <div style="margin-left: 10%;padding-top: 0.5%">
+      <span class="input-label" style="font-family: My sa Font, Verdana, Tahoma;">Member Name</span>
+    </div>
+  </div>
+  </label>  
+
+<label class="item" onclick="fnfDetails()">
+  <div class="row" style="height: 40px;padding: 0; margin: 0">
+    <div style="margin-left: 2%;width: 10%;">
+      <a style="float: left;" class="button button-icon icon ion-person"></a>
+    </div>
+    <div style="margin-left: 10%;padding-top: 0.5%">
+      <span class="input-label" style="font-family: My sa Font, Verdana, Tahoma;">Member Name</span>
+    </div>
+  </div>
+  </label>  
+
+
+  <center>
+     <a id="save" href="../www/addFNF.html" style="font-size:16px;border-radius:5px 5px 5px 5px; width: 75%; font-family: My sa Font, Verdana, Tahoma; background-color: rgb(65,195,52); margin-top: 25px" class="button button-dark button-block">ADD MORE</a>
+ </center>
+  </div>
+
+  <div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div>
+
+</ion-content>
+
+<script type="text/javascript">
+  
+  function fnfDetails()
+  {
+    window.location.href = '../www/memberdetails.html';
+  }
+
+</script>
+
+  </body>
+</html>
+
+
+

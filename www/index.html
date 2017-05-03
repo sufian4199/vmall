@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+<script src="js/jquery.js"></script>    
+    
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="lib/ionic/css/ionicons.css" rel="stylesheet">
+    
+<style type="text/css">
+  #signupButt:hover{
+  background-color: #89BD53;
+    color: #FFFFFF;
+}
+
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+
+</style>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+ <div class="bar bar-header bar-balanced" style="background-color: #681979;">
+  <h1 class="title" style="font-family: My sa Font, Verdana, Tahoma;"><b>Login</b></h1>
+</div>
+<ion-content style="background-color: #ffffff; no-repeat center;background-size:cover;overflow: scroll;" class="scroll-content ionic-scroll  has-header"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+    <div class="spacer" style="width: 300px; height: 35px;"></div>
+    <center>
+
+    <div style="width: 90%">
+      <img src="img/logo.jpg" height="150" width="150">
+    </div>
+    <div class="spacer" style="width: 300px; height: 35px;"></div>
+    
+    <div class="list list-inset" style="width: 95%">
+      <label class="item item-input" style="border-bottom-width: 2px">
+        <input id="email" type="email" placeholder="EMAIL" style="font-family: My sa Font, Verdana, Tahoma;">
+      </label>
+      
+    <div class="spacer" style="width: 300px; height: 10px;"></div>
+      <label class="item item-input" style="border-bottom-width: 2px">
+        <input id="password" type="password" placeholder="PASSWORD" style="font-family: My sa Font, Verdana, Tahoma;">
+      </label>
+    </div>
+    <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+      <a onclick="logintest()" id="welcome-button14" style="font-size:19px;border-radius:5px 5px 5px 5px; width: 80%; background-color: #681979; font-family: My sa Font, Verdana, Tahoma;" class="button button-balanced button-block"><b>Login</b></a>
+    
+    <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+
+    <div class="spacer" style="width: 300px; height: 10px;"></div>
+      <h4 style="color: #681979;">Don't have an account yet?</h4>
+      <a id="signupButt" style="font-size:19px;border-radius:5px 5px 5px 5px; width: 80%; background-color: #681979; color: white; font-family: My sa Font, Verdana, Tahoma;" class="button button-outline" href="../www/signup.html"><b>Sign Up</b></a>
+
+
+    </center>
+
+  </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div>
+
+</ion-content>
+
+<script type="text/javascript">
+  
+  function logintest()
+  {
+         var email= document.getElementById('email').value;
+         var password= document.getElementById('password').value;
+
+		 if(email==""||password=="")
+		  {
+			alert('Please fill all credential');
+			return;
+		  }
+
+          $.ajax({
+                    type: "POST",
+                    url: "http://localhost/vendor/servercontroller.php",
+                    data: { REQUEST_TYPE: "LOGIN", EMAIL:email, PASSWORD:password,TYPE:0},
+                    dataType: 'json',
+                    timeout: 30000,
+                    success: function (data) {
+                        if (data.STATUS == "SUCCESS") {
+    //                       alert("success");
+                         localStorage.setItem("userid",data.id);
+                         localStorage.setItem("sGender",data.gender);
+                         
+    	                   window.location.href = '../www/home.html';
+                        }
+                        else if (data.STATUS == "FAIL") {
+                            alert('Invalid Transaction');
+                        }
+                        else //ERROR
+                        {
+                            alert('Error');
+                        }
+                    },
+                    error: function (x, t, m) {
+                        if (t === "timeout") {
+                            alert('Timeout');
+                        } else {
+                            alert(t);
+                        }
+                    }
+                });   
+       
+            
+      
+    
+ }
+</script>
+  </body>
+</html>

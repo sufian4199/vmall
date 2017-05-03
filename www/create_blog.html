@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="lib/ionic/css/ionicons.css" rel="stylesheet">
+    
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/Request.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="lib/genericons/genericons.css">
+    <link rel="stylesheet" href="lib/base.css">
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<style type="text/css">
+  .item-select2 select {
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 240px 0 16px;
+    width: 100%;
+    border: none;
+    background: #fff;
+    color: #333;
+    text-indent: .01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    direction: rtl;}
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+</style>
+    
+    <style type="text/css">
+      .input-label-edited {
+  padding: 7px 10px 0 0px;
+  width: 35%;
+  color: #444;
+  font-size: 16px;
+}
+    </style>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+ <div class="bar bar-header bar-dark" style="background-color: rgb(65,195,52);">
+  <a class="button button-icon icon ion-ios-arrow-back" href="../www/all_blogs.html"></a>
+  <h1 class="title" style="left: 10px; position: relative; top: -5px;font-family: My sa Font, Verdana, Tahoma"><b>Create Blog</b></h1>
+  
+ <a class="pull-right" href="../www/cart.html"><img style="height:30px; right: 12.1%; position: absolute; margin-top: -1px" src="img/hcart.png"></a>
+ <a class="pull-right" style="margin:0; padding:0; border:0;" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false"><img style="height:30px; right: 0;margin-left:10px; margin-right:10px; position: absolute; vertical-align: center" src="img/setting-web.png"></a>
+
+
+
+</div>
+<ion-content padding="true" style="background-color: white; no-repeat center;background-size:cover; overflow: scroll;" class="scroll-content ionic-scroll  has-header"><div class="scroll padding" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+    
+
+<div class="collapse navbar-collapse" id="myNavbar">
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white; padding-top: 10px" class="btn col-xs-12" href="../www/home.html">Home</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/profile.html">Profile</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/all_blogs.html">Blogs</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/history.html">Order History</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/wish.html">Wishlist</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/invite.html">Invite Friends</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/redeem.html">Redeem Points</a></div>
+
+
+          <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+  <center>
+<div class="list list-inset" style="width: 95%">
+      <label class="item item-input">
+        <input id="Topic" type="text" placeholder="Topic Of Blog" style="font-family: My sa Font, Verdana, Tahoma;">
+      </label>
+    </div>
+
+
+  <div style="height:1px; width:100%; background-color:rgb(217, 219, 221);"></div>
+    <br>
+
+  </center>
+
+  <div class="form-group">
+      <h4 for="comment" style="font-family: My sa Font, Verdana, Tahoma">Description:</h4>
+      <textarea style="background-color: #F0F0F0 ; border-width:2px; width:100%; padding-left: 10px; padding-top: 10px; font-family: My sa Font, Verdana, Tahoma; resize: none" placeholder="Add Description about your blog" class="form-control" rows="6" id="comment"></textarea>
+  </div>
+
+  <br>
+  <div style="height:1px; width:100%; background-color:rgb(217, 219, 221);"></div>
+  <h4 style="font-family: My sa Font, Verdana, Tahoma;">Images: </h4>
+  <br>
+  <div id="imagediv" style="padding-left: 10px">
+
+   <img src="img/food-web.png" style="width:32%; height:32%;">  
+  
+  </div>
+  <br>
+  <center>
+  <div style="height:75px; width:75px; background-color:rgb(217, 219, 221); border-radius: 50px;" onclick="addimage()">
+  <center><h2 style="padding-top:15px;">+</h2></center>
+  </div>
+  </center>
+  <br>
+  <div style="height:1px; width:100%; background-color:rgb(217, 219, 221);"></div>
+  <h4 style="font-family: My sa Font, Verdana, Tahoma;">Videos: </h4>
+<br>
+  <div id="videodiv" style="padding-left: 10px">
+
+   <img src="img/vid.jpg" style="width:32%; height:32%;">  
+  
+  </div>
+  <br>
+  <center>
+  <div style="height:75px; width:75px; background-color:rgb(217, 219, 221); border-radius: 50px;" onclick="addvideo()">
+  <center><h2 style="padding-top:15px;">+</h2></center>
+  </div>
+  </center>
+  <br><br>
+   <center>
+
+      <a id="save" style="border-radius:10px 10px 10px 10px; width: 50%; background-color: rgb(65,195,52);font-family: My sa Font, Verdana, Tahoma; font-size: 20px" class="button button-dark button-block" href="../www/all_blogs.html">Create</a>
+    <br>
+
+  </center>
+  
+  </div>
+  <div class="scroll-bar scroll-bar-v">
+  <div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;">
+    
+  </div></div>
+
+</ion-content>
+
+
+<script type="text/javascript">
+function addvideo()
+{
+  $("#videodiv").append(
+     '<img src="img/vid.jpg" style="width:32%; height:32%;">'  
+  );
+    
+}
+
+function addimage()
+{
+  $("#imagediv").append(
+     '<img src="img/food-web.png" style="width:32%; height:32%;">'  
+  );
+    
+}
+</script>
+
+  </body>
+</html>

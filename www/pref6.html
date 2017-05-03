@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="lib/ionic/css/ionicons.css" rel="stylesheet">
+    
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/Request.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="lib/genericons/genericons.css">
+    <link rel="stylesheet" href="lib/base.css">
+
+    <script src="js/jquery.js"></script> 
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+<style type="text/css">
+  .item-select2 select {
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 240px 0 16px;
+    width: 100%;
+    border: none;
+    background: #fff;
+    color: #333;
+    text-indent: .01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    direction: rtl;}
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+</style>
+  
+    <style type="text/css">
+      .input-label-edited {
+  padding: 7px 10px 0 0px;
+  width: 35%;
+  color: #444;
+  font-size: 16px;
+}
+
+    </style>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+ <div class="bar bar-header bar-balanced" style="background-color: #681979;">
+  <h1 class="title" style="font-family: My sa Font, Verdana, Tahoma; top: 20%"><b>Price Range Preference</b></h1>
+</div>
+<ion-content padding="true" style="background-color: white; no-repeat center;background-size:cover; overflow: scroll;" class="scroll-content ionic-scroll  has-header"><div class="scroll padding" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+
+  <div class="spacer" style="width: 300px; height: 15px;"></div>
+  <center><h3 style="margin-left: 10px; color: #343434;">What price range would you prefer to buy in?</h3></center>
+
+  <label class="item item-input item-select" style="height: 44px;border-width: 2px">
+        <select id="rng" style="font-family: My sa Font, Verdana, Tahoma; font-size: 16px">
+          <option value=0>Price Range</option>
+          <option value="0-1000">0-1000</option>
+          <option value="1000-10,000">1000-10,000</option>
+          <option value="10,000-50,000">10,000-50,000</option>
+          <option value="50,000-75,000">50,000-75,000</option>
+          <option value="75,000-10,000">75,000-10,000</option>
+        </select>
+        </label>
+    
+<center>
+  <a id="signupButt" style="font-size:16px;border-radius:20px 20px 20px 20px; width: 50%; font-family: My sa Font, Verdana, Tahoma; background-color: #681979; font-size: 18px" class="button button-dark button-block"  onclick="next()">Select</a>
+</center>
+  </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div>
+
+</ion-content>
+  </body>
+
+
+<script type="text/javascript">
+ function next()
+    {
+      var value="";
+      if (document.getElementById('rng').value == 0) 
+      {
+        alert("please select an price range");
+        return;
+      }
+       var id=localStorage.getItem("userid");
+       value=document.getElementById('rng').value;
+       alert(id)
+       alert(value);
+       $.ajax({
+                    type: "POST",
+                    url: "http://localhost/vendor/servercontroller.php",
+                    data: { REQUEST_TYPE: "ADDPREF", ID:id, TYPE:"Price Range", VALUE:value},
+                    dataType: 'json',
+                    timeout: 30000,
+                    success: function (data) {
+                        if (data.STATUS == "SUCCESS") {
+    //                       alert("success");
+
+                            window.location.href = '../www/index.html';
+      
+                        }
+                        else if (data.STATUS == "FAIL") {
+                            alert('Invalid Transaction');
+                        }
+                        else //ERROR
+                        {
+                            alert('Error');
+                        }
+                    },
+                    error: function (x, t, m) {
+                        if (t === "timeout") {
+                            alert('Timeout');
+                        } else {
+                            alert(t);
+                        }
+                    }
+                });   
+     // else
+      
+    
+      
+    }
+
+</script>
+
+
+
+</html>

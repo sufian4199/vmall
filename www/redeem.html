@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="lib/ionic/css/ionicons.css" rel="stylesheet">
+    
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/Request.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="lib/genericons/genericons.css">
+    <link rel="stylesheet" href="lib/base.css">
+
+    <script src="js/jquery.js"></script> 
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+<style type="text/css">
+
+input[type=text] {
+    width: 165px;
+    box-sizing: border-box;
+    border: 2px solid rgb(65,195,52);
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('img/sicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 10px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 90%;
+    border-radius: 2px;
+
+}
+
+@font-face {
+    font-family: "My sa Font";
+    src: url(fonts/San Francisco UI.pkg) format("truetype");
+}
+
+@font-face {
+    font-family: "My Custom Font";
+    src: url(fonts/custom.ttf) format("truetype");
+}
+p.customfont { 
+    font-family: "My Custom Font", Verdana, Tahoma;
+}
+</style>
+</head>
+
+<body   style="min-height:100% !important; height:auto;">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header" style="background-color: rgb(65,195,52);">
+            <a class="navbar-brand" style=" padding: 0;" href="../www/home.html"><img style="height:50px;" src="img/newLogo.png">
+	        <a class="pull-right" style="margin:0; padding:0; border:0;" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false"><img style="margin-top:10px; height:30px; margin-left:10px; margin-right:10px;" src="img/setting-web.png"></a>
+           <a class="pull-right" href="../www/cart.html"><img style="height:30px; right: 12.1%; position: absolute; margin-top: 9px" src="img/hcart.png"></a>
+
+		</div>
+    </div>
+
+</nav>
+
+
+
+
+<div class="container-fluid"  style="min-height:100% !important; height:auto; padding-top: 5px; margin-top: 50px">
+
+
+<div class="collapse navbar-collapse" id="myNavbar" style="padding-right: 25px; padding-left: 25px; ">
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white; padding-top: 10px" class="btn col-xs-12" href="../www/home.html">Home</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/profile.html">Profile</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/all_blogs.html">Blogs</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/history.html">Order History</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/wish.html">Wishlist</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/invite.html">Invite Friends</a>
+<a style="background-color: rgb(65,195,52); color: white;font-family: My sa Font, Verdana, Tahoma;border-bottom:1px solid white;" class="btn col-xs-12" href="../www/redeem.html">Redeem Points</a></div>
+
+<div id="content">
+
+<div id="page-content" style="margin-top: 25px">
+<p style="font-size: 13px;font-family: My sa Font, Verdana, Tahoma; float: right; right: 15px; position: absolute;">Your Points:<span id="name" style="font-family: My sa Font, Verdana, Tahoma">150</span></p>
+
+<h2 style="font-family: My sa Font, Verdana, Tahoma; color: rgb(65,195,52); margin-left: 10px;">Offers</h2>
+
+<div>
+
+<label class="item">
+  <div class="row" style="height: 40px; padding: 0; margin: 0">
+    <div style="width: 5%;" onclick="restu()">
+      <a style="float: left;" class="button button-icon icon ion-android-restaurant"></a>
+    </div>
+    <div style="margin-left: 8%; padding-top: 0.5%; overflow: scroll; width: 55%" onclick="restu()">
+      <span class="input-label" style="font-family: My sa Font, Verdana, Tahoma;">Al-Baik : 10 points</span>
+    </div>
+         <a  style="float:right; margin-top:1%; font-family: My sa Font, Verdana, Tahoma; right: 15px; position: absolute; background-color: rgb(65,195,52);" type="button" onclick="inv()" class="btn btn-success">Redeem</a>
+
+  </div>
+  </label>  
+
+<label class="item">
+  <div class="row" style="height: 40px;padding: 0; margin: 0">
+    <div style="width: 5%;" onclick="restu()">
+      <a style="float: left;" class="button button-icon icon ion-android-restaurant"></a>
+    </div>
+    <div style="margin-left: 8%;padding-top: 0.5%; overflow: scroll; width: 55%" onclick="restu()">
+      <span class="input-label" style="font-family: My sa Font, Verdana, Tahoma;">KFC : 5 points</span>
+    </div>
+         <a  style="float:right; margin-top:1%; font-family: My sa Font, Verdana, Tahoma; right: 15px; position: absolute; background-color: rgb(65,195,52);" type="button" onclick="inv()" class="btn btn-success">Redeem</a>
+
+  </div>
+  </label>  
+
+<label class="item">
+  <div class="row" style="height: 40px;padding: 0; margin: 0">
+    <div style="width: 5%;" onclick="restu()">
+      <a style="float: left;" class="button button-icon icon ion-android-restaurant"></a>
+    </div>
+    <div style="margin-left: 8%;padding-top: 0.5%; overflow: scroll; width: 55%" onclick="restu()">
+      <span class="input-label" style="font-family: My sa Font, Verdana, Tahoma;">Bait-Al-Mandi : 3 points</span>
+    </div>
+         <a  style="float:right; margin-top:1%; font-family: My sa Font, Verdana, Tahoma; right: 15px; position: absolute; background-color: rgb(65,195,52);" type="button" onclick="inv()" class="btn btn-success">Redeem</a>
+
+  </div>
+  </label>  
+  <br>
+
+  </div>
+	
+	</div>
+<script src="lib/hammer.2.0.4.js"></script>
+<script src="lib/wptr.1.1.js"></script>
+
+<script>
+
+  function restu()
+  {
+    window.location.href = '../www/restaurantdetails.html';
+  }
+
+var snd = new Audio("img/sounds/whistle.mp3"); // buffers automatically when created
+var refresh=false;
+$( document ).ready(function() {
+//	$("#page-content").html('<div class="row text-center"><img style="margin-top:30%; width:60px; height:auto;" src="img/loader.gif"/></div>');
+//    GetEmail();
+//    HomeRequest();
+});
+function collapseIt(e) {
+	if($('#'+e+'-icon').hasClass('glyphicon-menu-down'))
+	{
+		$('#'+e+'-icon').attr('class', 'glyphicon glyphicon-menu-up');
+	}
+	else
+	{
+		$('#'+e+'-icon').attr('class', 'glyphicon glyphicon-menu-down');
+	}
+}
+
+window.onload = function() {
+	WebPullToRefresh.init( {
+		loadingFunction: exampleLoadingFunction
+	} );
+};
+
+// Just an example loading function that returns a
+// promise that WebPullToRefresh can use.
+var exampleLoadingFunction = function() {
+	return new Promise( function( resolve, reject ) {
+		// Run some async loading code here
+		snd.play();
+		HomeRequest();
+		if ( true /* if the loading worked */ ) {
+			resolve();
+		} else {
+			reject();
+		}
+	} );
+};
+</script>
+</body>
+</html>
